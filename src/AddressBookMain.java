@@ -1,45 +1,45 @@
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 public class AddressBookMain {
     public static void main(String[] args) {
-        System.out.println("Welcome to AddressBook Program.");
-
-        List<String> person = new LinkedList<String>();
+        LinkedList<Person> addressBookMain = new LinkedList<>();
+        AddressBook addressBook = new AddressBook();
+        Person person;
         Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to Address Book !");
+        int temp = 0;
+        while (temp == 0) {
+            System.out.print("\n1. Add Person." +
+                    "\n2. View Address Book." +
+                    "\n3. Exit." +
+                    "\n Enter your choice: ");
+            int choice = input.nextInt();
+            switch (choice) {
+                case 1:
+                    person = addressBook.addPerson();
+                    addressBookMain.add(person);
+                    break;
 
-        System.out.print("Enter First name: ");
-        String firstname = input.nextLine();
+                case 2:
+                    if (addressBookMain.isEmpty()) {
+                        System.out.println("Address Book is Empty.");
+                    } else {
+                        for (Person details : addressBookMain) {
+                            System.out.println(details.toString());
+                        }
+                    }
+                    break;
 
-        System.out.print("Enter Last name: ");
-        String lastname = input.nextLine();
+                case 3:
+                    temp = 1;
+                    System.out.println("Exit.");
+                    break;
 
-        System.out.print("Enter Address: ");
-        String address = input.nextLine();
-
-        System.out.print("Enter City: ");
-        String city = input.nextLine();
-
-        System.out.print("Enter state: ");
-        String state = input.nextLine();
-
-        System.out.print("Enter Zip: ");
-        String zip = input.nextLine();
-
-        System.out.print("Enter phone number: ");
-        String phone = input.nextLine();
-
-        person.add(firstname);
-        person.add(lastname);
-        person.add(address);
-        person.add(city);
-        person.add(state);
-        person.add(zip);
-        person.add(phone);
-
-        for (String str : person){
-            System.out.println(str);
+                default:
+                    System.out.println("Invalid Choice.");
+                    break;
+            }
         }
     }
 }
