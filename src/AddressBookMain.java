@@ -1,3 +1,5 @@
 public class AddressBookMain {
-    System.out.Println("Welcome to AddressBook Program.")
+    public static void main(String[] args) {
+        System.out.println("Welcome to AddressBook Program");
+    }
 }
