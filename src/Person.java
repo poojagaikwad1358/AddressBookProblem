@@ -18,7 +18,63 @@ public class Person {
             this.phoneNum=phoneNum;
         }
 
-        @Override
+    void setFirstName(String firstName){
+        this.firstName=firstName;
+        }
+
+    void setLastName(String lastName){
+        this.lastName=lastName;
+        }
+
+    void setAddress(String address){
+        this.address=address;
+        }
+
+    void setCity(String city){
+        this.city=city;
+        }
+
+    void setState(String state){
+        this.state=state;
+        }
+
+    void setZip(int zip){
+        this.zip=zip;
+        }
+
+    void setPhoneNum(String phoneNum){
+        this.phoneNum=phoneNum;
+        }
+
+    String getFirstName(){
+        return firstName;
+        }
+
+    String getLastName(){
+        return lastName;
+        }
+
+    String getAddress(){
+        return address;
+        }
+
+    String getCity(){
+        return city;
+        }
+
+    String getState(){
+        return state;
+        }
+
+    int getZip(){
+        return zip;
+        }
+
+    String getPhoneNum(){
+        return phoneNum;
+        }
+
+    @Override
         public String toString(){
             return "\nFirst Name: "+firstName+
                     "\nLast Name: "+lastName+
