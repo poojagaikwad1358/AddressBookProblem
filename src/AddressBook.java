@@ -140,7 +140,7 @@ public class AddressBook extends LinkedList<Person> {
             String fullName = person.getFirstName()+person.getLastName();
             sortAddressBook.put(fullName, person);
         }
-        sortAddressBook.forEach((k,v)->System.out.println(v.toString()));
+        sortAddressBook.forEach( (k,v) -> System.out.println(v.toString()) );
     }
 
 }
