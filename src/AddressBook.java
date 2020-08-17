@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class AddressBook {
     Scanner input = new Scanner(System.in);
 
-    //Add person in address book.
+    //Add multiple person in address book.
     Person addPerson() {
         Person person = new Person();
         System.out.print("Enter First name: ");
