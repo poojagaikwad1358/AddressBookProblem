@@ -1,5 +1,7 @@
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class AddressBook extends LinkedList<Person> {
     Scanner input = new Scanner(System.in);
@@ -130,4 +132,15 @@ public class AddressBook extends LinkedList<Person> {
         }
         return addressBook;
     }
+
+    //Sort entries by name.
+    void sortByName(LinkedList<Person> addressBook){
+        Map<String,Person> sortAddressBook = new TreeMap<>();
+        for (Person person : addressBook){
+            String fullName = person.getFirstName()+person.getLastName();
+            sortAddressBook.put(fullName, person);
+        }
+        sortAddressBook.forEach((k,v)->System.out.println(v.toString()));
+    }
+
 }
