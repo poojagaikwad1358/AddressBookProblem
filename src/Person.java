@@ -8,74 +8,74 @@ public class Person {
         private int zip;
         private String phoneNum;
 
-        void setPerson(String firstName, String lastName, String address, String city, String state, int zip, String phoneNum){
-            this.firstName=firstName;
-            this.lastName=lastName;
-            this.address=address;
-            this.city=city;
-            this.state=state;
-            this.zip=zip;
-            this.phoneNum=phoneNum;
-        }
+    public void setPerson(String firstName, String lastName, String address, String city, String state, int zip, String phoneNum) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.address = address;
+            this.city = city;
+            this.state = state;
+            this.zip = zip;
+            this.phoneNum = phoneNum;
+    }
 
-    void setFirstName(String firstName){
+    void setFirstName(String firstName) {
         this.firstName=firstName;
-        }
+    }
 
-    void setLastName(String lastName){
+    void setLastName(String lastName) {
         this.lastName=lastName;
-        }
+    }
 
-    void setAddress(String address){
+    void setAddress(String address) {
         this.address=address;
-        }
+    }
 
-    void setCity(String city){
+    void setCity(String city) {
         this.city=city;
-        }
+    }
 
-    void setState(String state){
+    void setState(String state) {
         this.state=state;
-        }
+    }
 
-    void setZip(int zip){
+    void setZip(int zip) {
         this.zip=zip;
-        }
+    }
 
-    void setPhoneNum(String phoneNum){
+    void setPhoneNum(String phoneNum) {
         this.phoneNum=phoneNum;
-        }
+    }
 
-    String getFirstName(){
+    String getFirstName() {
         return firstName;
-        }
+    }
 
-    String getLastName(){
+    String getLastName() {
         return lastName;
-        }
+    }
 
-    String getAddress(){
+    String getAddress() {
         return address;
-        }
+    }
 
-    String getCity(){
+    String getCity() {
         return city;
-        }
+    }
 
-    String getState(){
+    String getState() {
         return state;
-        }
+    }
 
-    int getZip(){
+    int getZip() {
         return zip;
-        }
+    }
 
-    String getPhoneNum(){
+    String getPhoneNum() {
         return phoneNum;
         }
 
     @Override
-        public String toString(){
+        public String toString() {
             return "\nFirst Name: "+firstName+
                     "\nLast Name: "+lastName+
                     "\nAddress: "+address+

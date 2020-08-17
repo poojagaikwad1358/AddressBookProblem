@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class AddressBook {
     Scanner input = new Scanner(System.in);
 
+    //Add person in address book.
     Person addPerson() {
         Person person = new Person();
         System.out.print("Enter First name: ");
@@ -31,6 +32,7 @@ public class AddressBook {
         return person;
     }
 
+    //Edit person detais in address book.
     LinkedList<Person> editPerson(LinkedList<Person> addressBook){
         System.out.print("Enter First Name to edit : ");
         String firstName = input.next();
@@ -88,6 +90,27 @@ public class AddressBook {
             if (temp == 0){
                 System.out.println("Details not found.");
             }
+        }
+        return addressBook;
+    }
+
+    //Delete person in address book.
+    LinkedList<Person> deletePerson(LinkedList<Person> addressBook){
+        System.out.print("Enter First Name to delete record: ");
+        String firstName = input.next();
+        System.out.print("Enter Last Name: ");
+        String lastName = input.next();
+        int temp = 0;
+        for(Person person : addressBook){
+            if(firstName.equals(person.getFirstName()) && lastName.equals(person.getLastName())){
+                addressBook.remove(person);
+                System.out.println("Deletion Done.");
+                temp = 1;
+                break;
+            }
+        }
+        if (temp == 0){
+            System.out.println("Details not found.");
         }
         return addressBook;
     }
