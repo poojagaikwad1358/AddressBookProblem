@@ -1,11 +1,11 @@
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class AddressBook {
+public class AddressBook extends LinkedList<Person> {
     Scanner input = new Scanner(System.in);
 
     //Add multiple person in address book.
-    Person addPerson() {
+    public LinkedList<Person> addPerson (LinkedList<Person> addressBook) {
         Person person = new Person();
         System.out.print("Enter First name: ");
         String firstName = input.next();
@@ -13,26 +13,42 @@ public class AddressBook {
         System.out.print("Enter Last name: ");
         String lastName = input.next();
 
-        System.out.print("Enter Address: ");
-        String address = input.next();
+        if(duplicateEntry(firstName, lastName, addressBook) == true) {
+            System.out.println("Entry already exits.");
+        } else {
+            System.out.print("Enter Address: ");
+            String address = input.next();
 
-        System.out.print("Enter City: ");
-        String city = input.next();
+            System.out.print("Enter City: ");
+            String city = input.next();
 
-        System.out.print("Enter state: ");
-        String state = input.next();
+            System.out.print("Enter state: ");
+            String state = input.next();
 
-        System.out.print("Enter Zip: ");
-        int zip = input.nextInt();
+            System.out.print("Enter Zip: ");
+            int zip = input.nextInt();
 
-        System.out.print("Enter phone number: ");
-        int phoneNum = input.nextInt();
+            System.out.print("Enter phone number: ");
+            int phoneNum = input.nextInt();
 
-        person.setPerson(firstName, lastName, address, city, state, zip, phoneNum);
-        return person;
+            person.setPerson(firstName, lastName, address, city, state, zip, phoneNum);
+            addressBook.add(person);
+        }
+        return addressBook;
     }
 
-    //Edit person detais in address book.
+    //Check for duplicate entry
+    boolean duplicateEntry(String firstName, String lastName, LinkedList<Person> addressBook) {
+        boolean result = false;
+        for (Person person: addressBook){
+            if (firstName.equals(person.getFirstName()) && lastName.equals(person.getLastName())) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    //Edit person details in address book.
     LinkedList<Person> editPerson(LinkedList<Person> addressBook){
         System.out.print("Enter First Name to edit : ");
         String firstName = input.next();

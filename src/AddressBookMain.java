@@ -5,7 +5,7 @@ public class AddressBookMain {
     public static void main(String[] args) {
         LinkedList<Person> list = new LinkedList<>();
         AddressBook addressBook = new AddressBook();
-        Person person;
+        //Person person;
         Scanner input = new Scanner(System.in);
         System.out.println("Welcome to Address Book !");
         int temp = 0;
@@ -19,8 +19,7 @@ public class AddressBookMain {
             int choice = input.nextInt();
             switch (choice) {
                 case 1:
-                    person = addressBook.addPerson();
-                    list.add(person);
+                    addressBook = (AddressBook) addressBook.addPerson(addressBook);
                     break;
 
                 case 2:
