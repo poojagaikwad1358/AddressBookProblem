@@ -6,9 +6,9 @@ public class Person {
         private String city;
         private String state;
         private int zip;
-        private String phoneNum;
+        private int phoneNum;
 
-    public void setPerson(String firstName, String lastName, String address, String city, String state, int zip, String phoneNum) {
+    public void setPerson(String firstName, String lastName, String address, String city, String state, int zip, int phoneNum) {
             this.firstName = firstName;
             this.lastName = lastName;
             this.address = address;
@@ -42,7 +42,7 @@ public class Person {
         this.zip=zip;
     }
 
-    void setPhoneNum(String phoneNum) {
+    void setPhoneNum(int phoneNum) {
         this.phoneNum=phoneNum;
     }
 
@@ -70,7 +70,7 @@ public class Person {
         return zip;
     }
 
-    String getPhoneNum() {
+    int getPhoneNum() {
         return phoneNum;
         }
 

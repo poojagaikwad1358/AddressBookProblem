@@ -26,7 +26,7 @@ public class AddressBook {
         int zip = input.nextInt();
 
         System.out.print("Enter phone number: ");
-        String phoneNum = input.next();
+        int phoneNum = input.nextInt();
 
         person.setPerson(firstName, lastName, address, city, state, zip, phoneNum);
         return person;
@@ -77,7 +77,7 @@ public class AddressBook {
 
                     case 5:
                         System.out.print("Enter Updated Phone Number: ");
-                        String phoneNum = input.next();
+                        int phoneNum = input.nextInt();
                         p.setPhoneNum(phoneNum);
                         break;
 
